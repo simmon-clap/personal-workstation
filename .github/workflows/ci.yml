@@ -11,6 +11,10 @@ permissions:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    # 产品按 Asia/Shanghai 设计（09:30 / 21:00 开口点、日期归属都按北京时间）：
+    # CI 的默认 UTC 会让这些测试假红，所以显式钉住时区。
+    env:
+      TZ: Asia/Shanghai
     steps:
       - name: Checkout
         uses: actions/checkout@v4
