@@ -80,10 +80,10 @@ try{
  }
  await page.keyboard.press('Escape');await sleep(150);
 
- // 搜索河海：项目+任务
- await page.click('#graphsearch');await page.type('#graphsearch','河海');await page.keyboard.press('Enter');await sleep(500);
+ // 搜索某高校：项目+任务
+ await page.click('#graphsearch');await page.type('#graphsearch','某高校');await page.keyboard.press('Enter');await sleep(500);
  const hhu=await panelText(page);
- if(!hhu)fail('搜索河海没有打开弹窗');else if(!/某高校/.test(hhu)||!/水利大模型项目/.test(hhu))fail('河海弹窗缺项目：'+hhu.slice(0,100));else pass('某高校：项目+任务都在');
+ if(!hhu)fail('搜索某高校没有打开弹窗');else if(!/某高校/.test(hhu)||!/行业的行业大模型项目/.test(hhu))fail('某高校弹窗缺项目：'+hhu.slice(0,100));else pass('某高校：项目+任务都在');
  await page.keyboard.press('Escape');await sleep(150);
 
  // 生态视图

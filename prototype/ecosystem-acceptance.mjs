@@ -170,12 +170,12 @@ try {
   // ── 搜索某高校：弹窗有项目与任务 ───────────────────────────────────
   await page.evaluate(() => { const i = document.querySelector('#graphsearch'); if (i) i.value = ''; });
   await page.click('#graphsearch');
-  await page.type('#graphsearch', '河海');
+  await page.type('#graphsearch', '某高校');
   await page.keyboard.press('Enter'); await sleep(500);
   const hhuText = await panelText(page);
   if (!hhuText) fail('搜索某高校没有打开右侧弹窗');
   else if (!/某高校/.test(hhuText)) fail('搜索打开的不是某高校：' + hhuText.slice(0, 80));
-  else if (!/水利大模型项目/.test(hhuText)) fail('某高校弹窗没有水利大模型项目');
+  else if (!/行业的行业大模型项目/.test(hhuText)) fail('某高校弹窗没有行业的行业大模型项目');
   else if (!/任务 ·/.test(hhuText)) fail('某高校弹窗没有任务分区');
   else pass('搜索/点组织能打开项目与任务（某高校）');
   await page.screenshot({path: join(SHOTS, 'accept-panel-1440.png')});
@@ -257,13 +257,13 @@ try {
   }
   // 结构态搜索：不能再把画布清空
   await page.evaluate(() => { const i = document.querySelector('#graphsearch'); if (i) i.value = ''; });
-  await page.click('#graphsearch'); await page.type('#graphsearch', '河海'); await page.keyboard.press('Enter'); await sleep(500);
+  await page.click('#graphsearch'); await page.type('#graphsearch', '某高校'); await page.keyboard.press('Enter'); await sleep(500);
   const searchState = await page.evaluate(() => ({
     veil: document.querySelector('#veil')?.classList.contains('open'),
     title: document.querySelector('#detailtitle')?.textContent || '',
     buckets: document.querySelectorAll('#spaceSvg [data-bucket-card]').length,
   }));
-  if (!searchState.veil || !/某高校/.test(searchState.title)) fail('结构态搜索河海没有打开详情');
+  if (!searchState.veil || !/某高校/.test(searchState.title)) fail('结构态搜索某高校没有打开详情');
   else if (searchState.buckets === 0) fail('结构态搜索把画布清空了');
   else pass('结构态搜索能定位且不清空画布');
   await page.keyboard.press('Escape'); await sleep(150);

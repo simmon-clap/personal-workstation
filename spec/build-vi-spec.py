@@ -371,7 +371,7 @@ def sec_judge():
 <h3>V2 · 判断三要素：缺哪项显示"缺"，不留白</h3>
 <div class="demo"><div class="lbl">判断卡（依据就地展开，不跳页）</div>
 <div class="card judgment" style="max-width:660px">
-<div class="row1"><span>判断 · 微纳核芯 3D 存算一体</span><span><i>◇</i> 你已确认</span></div>
+<div class="row1"><span>判断 · 某自研芯片项目 3D 存算一体</span><span><i>◇</i> 你已确认</span></div>
 <h5>服务器端短期难以成立：带宽与成本都不匹配现有客户的价格预期。</h5>
 <div class="hr"></div>
 <div class="ev">依据 3 条 · 点开就地展开</div>
@@ -443,7 +443,7 @@ def sec_share():
 <div class="row1"><span>导出为可分享文档</span><span>将分享 3 条 · 剔除 1 条仅自己</span></div>
 <div class="hr"></div>
 <div style="font-size:12.5px;line-height:2.1">
-<div><span class="tag t-ok">✓</span> 微纳核芯服务器端短期难成立 <small style="color:var(--muted)">· 含依据 3 条 · 10-11</small></div>
+<div><span class="tag t-ok">✓</span> 某自研芯片项目服务器端短期难成立 <small style="color:var(--muted)">· 含依据 3 条 · 10-11</small></div>
 <div><span class="tag t-ok">✓</span> 我方不做垫资与合资兜底 <small style="color:var(--muted)">· 含依据 2 条 · 10-11</small></div>
 <div><span class="tag t-ok">✓</span> 需核对长鑫合作真实性 <small style="color:var(--muted)">· 待核对 · 10-11</small></div>
 <div style="color:var(--muted)"><span class="tag t-neu">–</span> <s>与股东方的沟通口径</s>
