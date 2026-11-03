@@ -1,0 +1,19 @@
+name: guard
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      # 结构层检查（路径黑名单 + 形状识别 + 演示数据目录）。词表层在本地/发布脚本里跑，
+      # 因为词表必须放在仓库外——CI 里没有它，就只做结构层，而不是假装全部通过。
+      - name: 结构层：路径与形状
+        run: node scripts/public-release-guard.mjs --no-terms

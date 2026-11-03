@@ -1,0 +1,3 @@
+#!/bin/sh
+# 提交前挡一道：暂存区里只要有业务数据就不许提交（2026-11-03 事故后加）。
+exec node scripts/public-release-guard.mjs --staged
