@@ -111,7 +111,10 @@ for (const file of files) {
   }
   const lower = text.toLowerCase();
   for (const term of terms) {
-    if (term && lower.includes(term.toLowerCase())) problems.push({file, rule: '业务词表', detail: term});
+    if (!term) continue;
+    // 文件名本身就是泄露面：spec/58-某客户画布.md 这种，内容再干净也没用
+    if (file.toLowerCase().includes(term.toLowerCase())) problems.push({file, rule: '文件名', detail: term});
+    if (lower.includes(term.toLowerCase())) problems.push({file, rule: '业务词表', detail: term});
   }
   for (const shape of SHAPES) {
     if (shape.test(text, file)) problems.push({file, rule: '形状识别', detail: shape.name});
